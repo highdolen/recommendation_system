@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0 16px 40px;
+  background: #f5f7fa;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 40px 0 32px;
+  color: #111827;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Основной контейнер */
+#mainContent {
+  max-width: 620px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Секция добавления фильма */
+.add-film {
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.add-film:hover {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+}
+
+.add-film h2 {
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+/* Форма добавления фильма */
+#addFilmForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#addFilmForm input[type="text"],
+#addFilmForm input[type="number"],
+#addFilmForm select {
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1.5px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #111827;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+#addFilmForm input[type="text"]:focus,
+#addFilmForm input[type="number"]:focus,
+#addFilmForm select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+#addFilmForm button[type="submit"] {
+  padding: 16px 0;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+#addFilmForm button[type="submit"]:hover {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.8);
+}
+
+/* Сообщение */
+.message {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: px;
+  min-height: 20px;
+  color: #ef4444; /* ошибка по умолчанию */
+  user-select: none;
+}
+
+.message.success {
+  color: #6b7280;
+}
+
+.message.error {
+  color: #ef4444;
+}
+
+.message.loading {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Фильтр жанров */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter select {
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1.5px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #111827;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  min-width: 180px;
+}
+
+.filter select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.filter button {
+  padding: 16px 28px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.filter button:hover {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.8);
+}
+
+/* Список фильмов */
+.films-list {
+  max-width: 620px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Если список пуст */
+.empty-message {
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  margin-top: 12px;
+  user-select: none;
+}
+
+/* Один элемент фильма */
+.film-item {
+  background: #eff6ff;
+  padding: 20px 24px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+.film-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+}
+
+.film-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #1e40af;
+  margin-bottom: 6px;
+}
+
+.film-genre {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.film-year {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  #mainContent {
+    gap: 28px;
+  }
+
+  .add-film {
+    padding: 28px 20px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin: 28px 0 24px;
+  }
+
+  #addFilmForm input[type="text"],
+  #addFilmForm input[type="number"],
+  #addFilmForm select,
+  .filter select {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
+
+  #addFilmForm button[type="submit"],
+  .filter button {
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  .film-item {
+    padding: 16px 20px;
+  }
+}

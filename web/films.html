@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Каталог фильмов</title>
+  <link rel="stylesheet" href="/film.css" />
+</head>
+<body>
+  <h1>Каталог фильмов</h1>
+
+  <div id="mainContent">
+    <section class="add-film">
+      <h2>Добавить фильм</h2>
+      <form id="addFilmForm">
+        <input type="text" id="filmTitle" placeholder="Название фильма" required />
+        <select id="filmGenre" required>
+          <option value="" disabled selected>Выберите жанр</option>
+          <option value="Комедия">Комедия</option>
+          <option value="Драма">Драма</option>
+          <option value="Фантастика">Фантастика</option>
+          <option value="Боевик">Боевик</option>
+          <option value="Ужасы">Ужасы</option>
+          <option value="Мелодрама">Мелодрама</option>
+          <option value="Приключения">Приключения</option>
+          <option value="Исторический">Исторический</option>
+          <option value="Военный">Военный</option>
+          <option value="Триллер">Триллер</option>
+          <option value="Детектив">Детектив</option>          
+        </select>
+        <input type = "number" id = "filmYear" placeholder="Год выпуска" required min="1888" max="2100"/>
+        <button type="submit">Добавить фильм</button>
+      </form>
+      <p id="addFilmMessage" class="message"></p>
+    </section>
+
+    <div class="filter">
+      <select id="genreSelect" aria-label="Выберите жанр">
+        <option value="" disabled selected>Выберите жанр</option>
+        <option value="Комедия">Комедия</option>
+        <option value="Драма">Драма</option>
+        <option value="Фантастика">Фантастика</option>
+        <option value="Боевик">Боевик</option>
+        <option value="Ужасы">Ужасы</option>
+        <option value="Мелодрама">Мелодрама</option>
+        <option value="Приключения">Приключения</option>
+        <option value="Исторический">Исторический</option>
+        <option value="Военный">Военный</option>
+        <option value="Триллер">Триллер</option>
+        <option value="Детектив">Детектив</option>
+      </select>
+      <button id="showFilmsBtn">Показать фильмы</button>
+    </div>
+
+    <div class="films-list" id="filmsList">
+      <p class="empty-message">Выберите жанр и нажмите «Показать фильмы»</p>
+    </div>
+  </div>
+
+  <script src="/films.js"></script>
+</body>
+</html>
