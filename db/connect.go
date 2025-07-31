@@ -3,18 +3,12 @@ package db
 import (
 	"database/sql"
 	"log"
-	"os"
 
 	_ "github.com/lib/pq"
 )
 
 func Connect() *sql.DB {
-	// Получаем строку подключения из переменной окружения
-	connStr := os.Getenv("DATABASE_URL")
-	if connStr == "" {
-		log.Fatal("DATABASE_URL не задана")
-	}
-
+	connStr := "host=localhost port=5433 user=fedya password=secret dbname=recdb sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
